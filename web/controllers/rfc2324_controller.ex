@@ -2,7 +2,7 @@ defmodule CoffeePot.Rfc2324Controller do
   use CoffeePot.Web, :controller
 
   def index(conn, _params) do
-    text conn, "Fingers crossed … maybe someone will bring it to you\n"
+    text conn, "Ask #{CoffeePot.Consumer.sample} to pour you another cup.\n"
   end
 
   def options(conn, _params) do
@@ -10,7 +10,7 @@ defmodule CoffeePot.Rfc2324Controller do
   end
 
   def brew(conn, _params) do
-    text conn, "Someone will brew it … if you're lucky\n"
+    text conn, "It's #{CoffeePot.Consumer.sample}'s turn to brew it!\n"
   end
 
   def not_implemented(conn, _params) do
