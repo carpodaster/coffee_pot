@@ -8,7 +8,10 @@ defmodule CoffeePot.Router do
   scope "/coffee", CoffeePot do
     pipe_through :api
 
+    get "/", Rfc2324Controller, :index
+
     match :propfind, "/", Rfc2324Controller, :options
+    match :brew, "/", Rfc2324Controller, :brew
     match :when, "/", Rfc2324Controller, :not_implemented
   end
 end

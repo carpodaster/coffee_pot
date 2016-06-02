@@ -1,8 +1,16 @@
 defmodule CoffeePot.Rfc2324Controller do
   use CoffeePot.Web, :controller
 
+  def index(conn, _params) do
+    text conn, "Fingers crossed … maybe someone will bring it to you\n"
+  end
+
   def options(conn, _params) do
     text conn, "At least I'm not a teapot\n"
+  end
+
+  def brew(conn, _params) do
+    text conn, "Someone will brew it … if you're lucky\n"
   end
 
   def not_implemented(conn, _params) do
