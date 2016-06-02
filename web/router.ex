@@ -5,7 +5,7 @@ defmodule CoffeePot.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", CoffeePot do
+  scope "/coffee", CoffeePot do
     pipe_through :api
 
     match :propfind, "/", Rfc2324Controller, :options
