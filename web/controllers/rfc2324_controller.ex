@@ -6,9 +6,7 @@ defmodule CoffeePot.Rfc2324Controller do
   end
 
   def options(conn, _params) do
-    consumers = System.get_env("COFFEE_CONSUMERS")
-                |> String.split(~r{\s}, trim: true)
-    json conn, %{ drinkers: consumers }
+    json conn, %{ drinkers: CoffeePot.Consumer.all }
   end
 
   def brew(conn, _params) do
